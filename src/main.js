@@ -13,7 +13,7 @@ import 'swiper/swiper-bundle.css'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
-Vue.use(VueAwesomeSwiper /* { default options with global component } */ )
+Vue.use(VueAwesomeSwiper)
 
 /* eslint-disable no-new */
 new Vue({
