@@ -3,11 +3,7 @@
         <div class="recommend-title">热销推荐</div>
         <ul>
             <!-- 1像素边框 -->
-            <li
-                class="item border-bottem"
-                v-for="item of recommendList"
-                :key="item.id"
-            >
+            <li class="item border-bottom" v-for="item of list" :key="item.id">
                 <img :src="item.imgUrl" class="item-img" />
                 <div class="item-info">
                     <p class="item-title">{{ item.title }}</p>
@@ -22,32 +18,8 @@
 <script>
 export default {
     name: 'HomeRecommend',
-    data: function () {
-        return {
-            recommendList: [
-                {
-                    id: '0001',
-                    title: '上海迪士尼乐园',
-                    desc: '全球最大的迪士尼城堡',
-                    imgUrl:
-                        'https://imgs.qunarzz.com/sight/p0/2005/a9/a9411416ff215fe2a3.water.jpg_200x200_3110fb7b.jpg'
-                },
-                {
-                    id: '0002',
-                    title: '上海迪士尼乐园',
-                    desc: '全球最大的迪士尼城堡',
-                    imgUrl:
-                        'https://imgs.qunarzz.com/sight/p0/2005/a9/a9411416ff215fe2a3.water.jpg_200x200_3110fb7b.jpg'
-                },
-                {
-                    id: '0003',
-                    title: '上海迪士尼乐园',
-                    desc: '全球最大的迪士尼城堡',
-                    imgUrl:
-                        'https://imgs.qunarzz.com/sight/p0/2005/a9/a9411416ff215fe2a3.water.jpg_200x200_3110fb7b.jpg'
-                }
-            ]
-        }
+    props: {
+        list: Array
     }
 }
 </script>

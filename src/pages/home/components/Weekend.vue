@@ -2,11 +2,7 @@
     <div>
         <div class="recommend-title">周末去哪儿</div>
         <ul>
-            <li
-                class="item border-bottem"
-                v-for="item of recommendList"
-                :key="item.id"
-            >
+            <li class="item border-bottom" v-for="item of list" :key="item.id">
                 <!-- 包裹img标签，防止抖动 -->
                 <div class="item-img-wrapper">
                     <img :src="item.imgUrl" class="item-img" />
@@ -23,32 +19,8 @@
 <script>
 export default {
     name: 'HomeWeekend',
-    data: function () {
-        return {
-            recommendList: [
-                {
-                    id: '0001',
-                    title: '上海必打卡',
-                    desc: '中西合璧，现代和传统各有各的精彩',
-                    imgUrl:
-                        'https://imgs.qunarzz.com/sight/source/1505/7d/df6ff468331c43.jpg_r_640x214_1f3783d0.jpg'
-                },
-                {
-                    id: '0002',
-                    title: '上海必打卡',
-                    desc: '中西合璧，现代和传统各有各的精彩',
-                    imgUrl:
-                        'https://imgs.qunarzz.com/sight/source/1505/7d/df6ff468331c43.jpg_r_640x214_1f3783d0.jpg'
-                },
-                {
-                    id: '0003',
-                    title: '上海必打卡',
-                    desc: '中西合璧，现代和传统各有各的精彩',
-                    imgUrl:
-                        'https://imgs.qunarzz.com/sight/source/1505/7d/df6ff468331c43.jpg_r_640x214_1f3783d0.jpg'
-                }
-            ]
-        }
+    props: {
+        list: Array
     }
 }
 </script>
@@ -56,14 +28,13 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/mixins.styl'
 .recommend-title
-    margin-top: .2rem
     line-height: .8rem
     background: #eee
     text-indent: .2rem
 .item-img-wrapper
     overflow:hidden
     height: 0
-    padding-bottom: 33.9%
+    padding-bottom: 37.09%
 .item-img
     width: 100%
 .item-info
