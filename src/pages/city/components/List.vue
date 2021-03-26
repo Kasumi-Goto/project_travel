@@ -21,7 +21,12 @@
                     </div>
                 </div>
             </div>
-            <div class="area" v-for="(item, key) of cities" :key="key">
+            <div
+                class="area"
+                v-for="(item, key) of cities"
+                :key="key"
+                :ref="key"
+            >
                 <div class="title border-topbottom">{{ key }}</div>
                 <div class="item-list">
                     <div
@@ -43,10 +48,25 @@ export default {
     name: 'CityList',
     props: {
         hotCities: Array,
-        cities: Object
+        cities: Object,
+        letter: String
     },
     mounted: function () {
         this.scroll = new Bcsroll(this.$refs.wrapper)
+    },
+    updated: function () {
+        console.log('updated')
+        this.scroll.refresh()
+    },
+    // watch监听letter的变化，一旦变化则跳转
+    watch: {
+        letter: function () {
+            if (this.letter) {
+                // 加[0]，v-for循环生成的是数组不是dom元素
+                const element = this.$refs[this.letter][0]
+                this.scroll.scrollToElement(element)
+            }
+        }
     }
 }
 </script>
