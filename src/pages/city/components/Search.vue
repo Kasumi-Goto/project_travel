@@ -15,6 +15,7 @@
                     v-for="item of list"
                     :key="item.id"
                     class="search-item border-bottom"
+                    @click="handleCityClick(item.name)"
                 >
                     {{ item.name }}
                 </li>
@@ -47,6 +48,12 @@ export default {
             return !this.list.length
         }
     },
+    methods: {
+        handleCityClick: function (city) {
+            this.$store.dispatch('changeCity', city)
+            this.$router.push('/')
+        }
+    },
     // 监听keyword输入的改变
     watch: {
         keyword: function () {
@@ -76,7 +83,7 @@ export default {
         }
     },
     mounted: function () {
-        this.scroll = new BScroll(this.$refs.search)
+        this.scroll = new BScroll(this.$refs.search, { click: true })
     },
     updated: function () {
         this.scroll.refresh()

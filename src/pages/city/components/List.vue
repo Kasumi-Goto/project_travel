@@ -5,7 +5,7 @@
                 <div class="title border-topbottom">当前城市</div>
                 <div class="button-list">
                     <div class="button-wrapper">
-                        <div class="button">北京</div>
+                        <div class="button">{{ this.currentCity }}</div>
                     </div>
                 </div>
             </div>
@@ -16,6 +16,7 @@
                         class="button-wrapper"
                         v-for="item of hotCities"
                         :key="item.id"
+                        @click="handleCityClick(item.name)"
                     >
                         <div class="button">{{ item.name }}</div>
                     </div>
@@ -33,6 +34,7 @@
                         class="item border-bottom"
                         v-for="innerItem of item"
                         :key="innerItem.id"
+                        @click="handleCityClick(innerItem.name)"
                     >
                         {{ innerItem.name }}
                     </div>
@@ -44,6 +46,7 @@
 
 <script>
 import Bcsroll from 'better-scroll'
+import { mapState, mapMutations } from 'vuex'
 export default {
     name: 'CityList',
     props: {
@@ -51,11 +54,19 @@ export default {
         cities: Object,
         letter: String
     },
-    mounted: function () {
-        this.scroll = new Bcsroll(this.$refs.wrapper)
+    computed: {
+        ...mapState({
+            currentCity: 'city'
+        })
     },
-    updated: function () {
-        this.scroll.refresh()
+    methods: {
+        handleCityClick: function (city) {
+            // this.$store.dispatch('changeCity', city)
+            this.changeCity(city)
+            // vue-router页面跳转
+            this.$router.push('/')
+        },
+        ...mapMutations(['changeCity'])
     },
     // watch监听letter的变化，一旦变化则跳转
     watch: {
@@ -66,6 +77,15 @@ export default {
                 this.scroll.scrollToElement(element)
             }
         }
+    },
+    mounted: function () {
+        const options = {
+            click: true
+        }
+        this.scroll = new Bcsroll(this.$refs.wrapper, options)
+    },
+    updated: function () {
+        this.scroll.refresh()
     }
 }
 </script>
