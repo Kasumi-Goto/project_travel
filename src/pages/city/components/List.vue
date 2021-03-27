@@ -55,7 +55,6 @@ export default {
         this.scroll = new Bcsroll(this.$refs.wrapper)
     },
     updated: function () {
-        console.log('updated')
         this.scroll.refresh()
     },
     // watch监听letter的变化，一旦变化则跳转
