@@ -25,6 +25,7 @@ export default {
     },
     methods: {
         handleScroll: function () {
+            console.log('scroll')
             // 浏览器兼容
             const top =
                 document.documentElement.scrollTop || document.body.scrollTop
@@ -42,6 +43,9 @@ export default {
     },
     activated: function () {
         window.addEventListener('scroll', this.handleScroll)
+    },
+    deactivated: function () {
+        window.removeEventListener('scroll', this.handleScroll)
     }
 }
 </script>
