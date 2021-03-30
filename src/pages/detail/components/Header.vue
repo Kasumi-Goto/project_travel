@@ -26,9 +26,11 @@ export default {
     methods: {
         handleScroll: function () {
             console.log('scroll')
-            // 浏览器兼容
+            // 浏览器兼容,不同设备浏览器获取top的函数不同
             const top =
-                document.documentElement.scrollTop || document.body.scrollTop
+                document.documentElement.scrollTop ||
+                window.pageYOfset ||
+                document.body.scrollTop
             // 进入60到140的范围渐隐渐显
             if (top > 60) {
                 let opacity = top / 140
