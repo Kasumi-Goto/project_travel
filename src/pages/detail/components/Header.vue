@@ -43,10 +43,10 @@ export default {
             }
         }
     },
-    activated: function () {
+    mounted: function () {
         window.addEventListener('scroll', this.handleScroll)
     },
-    deactivated: function () {
+    destroyed: function () {
         window.removeEventListener('scroll', this.handleScroll)
     }
 }
