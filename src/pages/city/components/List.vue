@@ -80,9 +80,13 @@ export default {
     },
     mounted: function () {
         const options = {
-            click: true
+            click: true,
+            scrollY: true
         }
         this.scroll = new Bcsroll(this.$refs.wrapper, options)
+    },
+    activated: function () {
+        this.scroll.refresh()
     },
     updated: function () {
         this.scroll.refresh()
