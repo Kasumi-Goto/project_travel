@@ -11,20 +11,19 @@
 
 header、轮播图（vue-awesome-swiper库）、小图标区域、推荐模块
 
-![home](E:\Develop\js\travel\images\home.png)
-
-![U$IO12T@19F2$0ZHGPTG$V1](E:\Develop\js\travel\images\U$IO12T@19F2$0ZHGPTG$V1.png)
+![home](https://github.com/Kasumi-Goto/project_travel/blob/main/images/home.png)
+![U$IO12T@19F2$0ZHGPTG$V1](https://github.com/Kasumi-Goto/project_travel/blob/main/images/U%24IO12T%4019F2%240ZHGPTG%24V1.png)
 
 ### 选择城市页面
 
 输入城市自动匹配、拖动右边字母表显示某个字母开头的城市列表、选择城市后自动跳转回首页
 
-![city](E:\Develop\js\travel\images\city.png)
+![city](https://github.com/Kasumi-Goto/project_travel/blob/main/images/city.png)
 
 ### 细节页面
 
 实现画廊区域、递归组件显示联票、header的渐隐渐显
 
-![detail](E:\Develop\js\travel\images\detail.png)
-
-![画廊](E:\Develop\js\travel\images\画廊.png)![渐隐渐显](E:\Develop\js\travel\images\渐隐渐显.png)
+![detail](https://github.com/Kasumi-Goto/project_travel/blob/main/images/detail.png)
+![画廊](https://github.com/Kasumi-Goto/project_travel/blob/main/images/%E7%94%BB%E5%BB%8A.png)
+![渐隐渐显](https://github.com/Kasumi-Goto/project_travel/blob/main/images/%E6%B8%90%E9%9A%90%E6%B8%90%E6%98%BE.png)
